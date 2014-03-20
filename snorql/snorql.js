@@ -12,8 +12,8 @@ function Snorql() {
     // modify this._endpoint to point to your SPARQL endpoint
     this._endpoint = document.location.href.match(/^([^?]*)snorql\//)[1] + 'sparql';
     // modify these to your likeing
-    this._poweredByLink = 'http://www4.wiwiss.fu-berlin.de/bizer/d2r-server/';
-    this._poweredByLabel = 'D2R Server';
+    this._poweredByLink = 'http://cactusprime:8890/sparql';
+    this._poweredByLabel = 'nextprot Server';
     this._enableNamedGraphs = false;
 
     this._browserBase = null;
@@ -26,7 +26,7 @@ function Snorql() {
         this.setBrowserBase(document.location.href.replace(/\?.*/, ''));
         this._displayEndpointURL();
         this._displayPoweredBy();
-        this.setNamespaces(D2R_namespacePrefixes);
+        this.setNamespaces(namespacePrefixes);
         this.updateOutputMode();
         var match = document.location.href.match(/\?(.*)/);
         var queryString = match ? match[1] : '';
